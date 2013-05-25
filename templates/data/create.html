@@ -1,0 +1,15 @@
+{% extends "homepage/index.html" %}
+
+{% block title %}
+    Add book
+{% endblock %}
+
+{% block content %}
+
+	<form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+
+{% endblock%}

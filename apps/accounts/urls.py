@@ -4,6 +4,7 @@ from django.contrib.auth.views import login, logout
 urlpatterns = patterns('apps.accounts.views',
     url(r'^profile/$', 'profile', name = 'accounts_profile'),
     url(r'^register/$', 'register', name = 'accounts_register'),
+    url(r'^register/$', 'register', name = 'accounts_register'),
 )
 
 urlpatterns += patterns('',

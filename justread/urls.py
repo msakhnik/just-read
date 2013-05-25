@@ -25,6 +25,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^$', include('apps.homepage.urls')),
     (r'^', include('apps.accounts.urls')),
+    (r'^', include('apps.data.urls')),
     url(r'^sitemap.xml', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     #url(r'^login/$', login, kwargs = {'template_name': 'homepage/login.html'}, name='homepage_login'),
     #url(r'^logout/$', logout, name='homepage_logout'),
