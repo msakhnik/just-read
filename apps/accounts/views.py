@@ -5,11 +5,14 @@ from django.template import RequestContext
 from apps.accounts.forms import RegisterForm
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from apps.data.models import Entry
 
 @login_required
 def profile(request):
+    entries = Entry.objects.published_entries().filter(user_id=request.user).order_by('-id')
     ctx = {
-        'profile' : request.user.get_profile()
+        'profile' : request.user.get_profile(),
+        'entries': entries
     }
     return render_to_response('accounts/profile.html', ctx, context_instance=RequestContext(request))
 

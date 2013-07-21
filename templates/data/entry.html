@@ -1,0 +1,11 @@
+{% extends "homepage/index.html" %}
+
+{% block title %}
+    Show entry
+{% endblock %}
+
+{% block content %}
+    <div> {{entrie.title}} - {{entrie.created}} </div>
+    <div> {{entrie.text}}  </div>
+    <br />
+{% endblock%}

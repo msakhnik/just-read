@@ -5,4 +5,12 @@
     <div>
         {{ profile.get_gender_display }}
     </div>
+
+    <h1>My Entries</h1>
+
+    {% for e in entries %}
+    <a href='{% url "data_entry" id=e.id %}'>{{e.title}}</a>
+    <br />
+    {% endfor %}
+
 {% endblock%}
